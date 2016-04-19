@@ -38,3 +38,4 @@ resources/*
 #  Ignore nodes
 krieghb-web/react-tut/node_modules
 krieghb-web/scripts/node_modules
+*/node_modules
