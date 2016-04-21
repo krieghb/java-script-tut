@@ -58,16 +58,64 @@
 			text-align: right;	
 			padding-right: 15px;
 		}
+        #everydiv {
+            padding: 5px 5px 5px 5px;
+            border: yellow 5px;
+            background-color: #cd0a0a;
+            height: 30px;
+        }
+        #everydiv div {
+            position: absolute;
+            height: 20px;
+            width: 204px;
+            left: 0;
+            background-color: #33FFFF;
+        }
+        #every {
+            /*position: absolute;*/
+            /*height: 20px;*/
+            /*width: 15em;*/
+            /*right: 0px;*/
+        }
 	</style>
 	<script src="../_js/jquery.min.js"></script>
+    <script src="../_js/jquery-ui.min.js"></script>
 	<script>
 		$(document).ready(function() {
+            
 			$('#open').click(function(evt) {
 				evt.preventDefault();
 				//noinspection JSJQueryEfficiency
 				$("#login form").slideToggle(300);
+				$(this).toggleClass('close');
+				$('#login').animate({
+                    position: 'absolute',
+					right: '0px'
+				}, 
+                1000, 
+                'easeInOutBounce')
 			});
+			slideDiv();
+			opacDiv();
+			
+            
 		}); // end ready
+		
+		function slideDiv() {
+			$("#everydiv").find("div").animate({
+//				left: '545px'
+				left: ($('.content').width() - $("#everydiv").find("div").width() - 1)
+			}, 6000).animate({
+				left: '0px'
+			}, 6000, slideDiv);
+		}
+		function opacDiv() {
+			$("#every").animate({
+				opacity: 0.2
+			}, 2000).animate({
+				opacity: 1
+			}, 2000, opacDiv);
+		}
 	</script>
 </head>
 <body>
@@ -96,7 +144,12 @@
 				<h1>Slide in Login Screen</h1>
 				<p>Click the login button at the top of the page</p>
 			</div>
-		</div>
+            <div id="everydiv">
+                <div>
+                    <h2 id="every">Hi there mr everybody!</h2>
+                </div>
+            </div>
+		</div> 
 		<footer>
 			<p>JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David McFarland</a>. Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
 		</footer>

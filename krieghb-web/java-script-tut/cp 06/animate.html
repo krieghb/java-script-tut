@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>A Slide In Dashboard</title>
+	<script src="../_js/jquery.min.js"></script>
+	<script src="../_js/jquery-ui.min.js"></script>
+	<link href="../_css/site.css" rel="stylesheet">
+	<style>
+		#dashboard {
+			width: 110px;
+			background-color: rgb(255,211,224);
+			padding: 20px 20px 0 20px;
+			position: absolute;
+			left: -92px;
+			z-index: 100;
+		}
+		#dashboard img {
+			margin-bottom: 20px;
+			border: 1px solid rgb(0,0,0);
+		}
+		
+		#hidiv {
+			background-color: #33FFFF;
+		}
+		
+		#hi {
+			position: absolute;
+			background-color: #cd0a0a;
+			right: 0;
+			top: 100px;
+			width: 25%;
+		}
+		
+		.hmm {
+			-webkit-animation-name: myMove;
+			animation-duration: 10s;
+			animation-fill-mode: forwards;
+			animation-play-state: paused;
+			/*position: relative;*/
+			/*opacity: .5;*/
+			/*right: 0;*/
+			/*-webkit-transition: myMove 10s;*/
+			/*-moz-transition: myMove 10s;*/
+			/*-o-transition: myMove 10s;*/
+			/*transition: myMove 10s;*/
+			/*-moz-animation-name: myMove;*/
+			/*-o-animation-name: myMove;*/
+			/*animation-name: myMove;*/
+			/*animation: myMove 10s;*/
+		}
+		@keyframes myMove {
+			0% {
+				background-color: #cd0a0a;
+				right: 0;
+				top: 100px;
+			}		
+			10% {
+				background: #EEEEEE;
+				right: 400px;
+				top: 400px;
+			}
+			50% {
+				background: #99CC99;
+				right: 200px;
+				top: 100px;
+			}
+			90% {
+				background: #000;
+				right: 0;
+				top: 100px;
+			}
+			100% {
+				background-color: #cd0a0a;
+				right: 0;
+				top: 100px;
+			}
+		}
+		
+	</style>
+	
+	<script>
+		$(document).ready(function() {
+		 	$("#dashboard").hover(
+					function() {
+						$(this).stop().animate({
+								left: 0,
+								backgroundColor: "rgb(27,45,94)"
+						}, 
+						500, 
+						"easeInSine");
+					},
+					function() {
+						$(this).stop().animate({
+							left: -92,
+							backgroundColor: "rgb(255,211,224)"
+						},
+						1500,
+						"easeOutBounce");
+					}
+			);
+			//  Adds animation, once complete, removes the class
+			$("#hi").click(function() {
+				var el = $("#hi");
+				el.addClass("hmm");
+				el.one('webkitAnimationEnd oanimationend msAnimationEnd animationend',
+					function() {
+						el.removeClass("hmm")
+				});
+
+			});
+		}); // end ready
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<header>
+			JAVASCRIPT <span class="amp">&amp;</span> jQUERY: THE&nbsp;MISSING&nbsp;MANUAL
+		</header>
+		<div id="dashboard">
+			<img src="../_images/small/blue_h.jpg" width="70" height="70" alt="blue">
+			<img src="../_images/small/green_h.jpg" width="70" height="70" alt="green">
+			<img src="../_images/small/orange_h.jpg" width="70" height="70" alt="orange">
+			<img src="../_images/small/purple_h.jpg" width="70" height="70" alt="purple">
+			<img src="../_images/small/red_h.jpg" width="70" height="70" alt="red">
+			<img src="../_images/small/yellow_h.jpg" width="70" height="70" alt="yellow">
+		</div>
+		<div class="content">
+			<div class="main">
+				<h1>Slide in Dashboard</h1>
+				<p>Mouse over the pink stripe on the left edge of this page</p>
+				<div id="hidiv">
+					<div id="hi">
+						<p>Hi Everybody!</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<p>JavaScript &amp; jQuery: The Missing Manual, 3rd Edition, by <a href="http://sawmac.com/">David McFarland</a>. Published by <a href="http://oreilly.com/">O'Reilly Media, Inc</a>.</p>
+		</footer>
+	</div>
+</body>
+</html>
