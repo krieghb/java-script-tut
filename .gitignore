@@ -39,3 +39,7 @@ resources/*
 krieghb-web/react-tut/node_modules
 krieghb-web/scripts/node_modules
 */node_modules
+
+#  Libraries (3rd party)
+krieghb-web/lib
+krieghb-web/lib/*

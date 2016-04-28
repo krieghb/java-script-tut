@@ -12,6 +12,7 @@ class App extends React.Component {
         //  using props
         let txt = this.props.txt;
         return <h1>{txt}</h1>;
+        
         //  Can also put in one line:
         //return <h1>{this.props.txt}</h1>
         
@@ -33,5 +34,5 @@ App.defaultProps = {
 
 ReactDOM.render(
     <App txt="This is the props value" />,
-    document.getElementById('app2')
+    document.getElementById('app')
 );

@@ -3,8 +3,7 @@
  * 
  * 3 ways of getting txt out.
  * 
- */
-import React from 'react';
+ */         
 //  Class can have state
 class App extends React.Component {
     //  Will always have a render method in a class method that returns other methods or components.

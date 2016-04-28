@@ -1,13 +1,18 @@
 /**
- * Created by krido02 on 4/7/2016.
+ * Created by krido02 on 4/26/2016.
  * 
+ * Testing module for using webpack with react
  * 
  */
+
+
 module.exports = {
-    entry: './tutorial-types/5 - child/main_child.js',
+    entry: [
+        "./js/Part 1/comp_lifecycle.js"
+    ],
     output: {
-        path: './',
-        filename: 'index.js'
+        filename: "index_bundle.js",
+        path: __dirname + '/dist'
     },
     devServer: {
         inline: true,

@@ -70,8 +70,8 @@ class App extends React.Component {
 
 
 const DefaultText = {
-    txt: "this is the state text",
-    newTxt: "The state contains the substring 'HI'"
+    txt: "this is the state text of it all",
+    newTxt: "The state contains the substring  Testing of the network broadcasting system"
 };
 
 //  3rd way is by stateless.
