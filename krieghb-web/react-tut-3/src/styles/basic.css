@@ -1,0 +1,38 @@
+* {
+    padding:0;
+    margin:0;
+}
+
+html{
+    font:14px normal Arial, sans-serif;
+    color:#626771;
+}
+
+#HelloRouter {
+    padding:60px;
+    text-align: center;
+}
+
+#Listing {
+    padding-left: 20px;
+    margin-left: 20px;
+}
+
+#Linking {
+    padding-left: 10px;
+    margin-left: 10px;
+}
+
+.active {
+    color: green;
+}
+
+.listTitle {
+    padding-left: 10px;
+    margin-left: 10px;
+}
+
+.listElements {
+    padding-left: 20px;
+    margin-left: 20px;
+}
